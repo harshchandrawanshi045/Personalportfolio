@@ -1,0 +1,117 @@
+<nav class="site-nav">
+        
+        <div class="site-nav-content">
+                
+                <a href="web.html" class="site-logo">
+                        I'm HARSH
+                </a>
+                
+                <ul class="site-nav-links">
+                        <li><a href="web.html">Home</a></li>
+                        <li><a href="ABOUT PAGE/aboutpageshort.html">About</a></li>
+                        <li><a href="SKILLS/skills.html">Skills</a></li>
+                        <li><a href="WORK/myworks.html">Work</a></li>
+                        <li><a href="CONTACT/mycontact.html">Contact</a></li>
+                        <li><a href="RESUME/myresume.html">Resume</a></li>
+                </ul>
+                
+                <button class="site-menu-btn" type="button">
+                        <span></span>
+                        <span></span>
+                </button>
+                
+        </div>
+        
+</nav>
+
+<style>
+        .site-nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 1000;
+                padding: 24px 0;
+                background: rgba(0, 0, 0, 0.75);
+        }
+        
+        .site-nav-content {
+                max-width: 1400px;
+                margin: 0 auto;
+                padding: 0 32px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+        }
+        
+        .site-logo {
+                font-size: 24px;
+                font-weight: 400;
+                color: #6366f1;
+                text-decoration: none;
+                font-family: "Times New Roman";
+                white-space: nowrap;
+        }
+        
+        .site-nav-links {
+                display: flex;
+                gap: 35px;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+        }
+        
+        .site-nav-links a {
+                color: #6366f2;
+                text-decoration: none;
+                font-size: 14px;
+                font-weight: 400;
+                transition: 0.3s;
+        }
+        
+        .site-nav-links a:hover {
+                color: #7dffff;
+                text-decoration: underline;
+        }
+        
+        .site-menu-btn {
+                display: none;
+                flex-direction: column;
+                gap: 6px;
+                background: none;
+                border: none;
+                padding: 5px;
+                cursor: pointer;
+        }
+        
+        .site-menu-btn span {
+                width: 24px;
+                height: 2px;
+                background-color: white;
+        }
+        
+        @media (max-width: 768px) {
+                
+                .site-nav-links {
+                        display: none;
+                        position: absolute;
+                        top: 75px;
+                        right: 20px;
+                        flex-direction: column;
+                        gap: 20px;
+                        padding: 25px;
+                        background-color: #111;
+                        border: 1px solid #333;
+                        border-radius: 10px;
+                }
+                
+                .site-nav-links.active {
+                        display: flex;
+                }
+                
+                .site-menu-btn {
+                        display: flex;
+                }
+                
+        }
+</style>

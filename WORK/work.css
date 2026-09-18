@@ -1,0 +1,526 @@
+/* ==================================================
+   GLOBAL / RESET
+================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ==================================================
+   BODY / PAGE BACKGROUND
+================================================== */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #080808;
+    color: white;
+    min-height: 100vh;
+
+    /* Space for fixed navbar */
+    padding: 120px 20px 50px;
+
+    overflow-x: hidden;
+}
+
+
+/* ==================================================
+   BACKGROUND GLOW - LEFT
+================================================== */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    width: 400px;
+    height: 400px;
+
+    background: #6366f1;
+
+    border-radius: 50%;
+
+    filter: blur(150px);
+
+    opacity: 0.10;
+
+    top: -150px;
+    left: -150px;
+
+    z-index: -1;
+}
+
+
+/* ==================================================
+   BACKGROUND GLOW - RIGHT
+================================================== */
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 350px;
+    height: 350px;
+
+    background: #8b5cf6;
+
+    border-radius: 50%;
+
+    filter: blur(150px);
+
+    opacity: 0.08;
+
+    bottom: -150px;
+    right: -100px;
+
+    z-index: -1;
+}
+
+
+/* ==================================================
+   SHARED NAVBAR
+================================================== */
+
+.site-nav {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 1000;
+
+    padding: 24px 0;
+
+    background: rgba(0, 0, 0, 0.75);
+}
+
+
+/* NAVBAR CONTENT */
+
+.site-nav-content {
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    padding: 0 32px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+/* NAVBAR LOGO */
+
+.site-logo {
+    font-size: 24px;
+
+    font-weight: 400;
+
+    color: #6366f1;
+
+    text-decoration: none;
+
+    font-family: "Times New Roman";
+
+    white-space: nowrap;
+}
+
+
+/* NAVBAR LINKS */
+
+.site-nav-links {
+    display: flex;
+
+    gap: 35px;
+
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+.site-nav-links a {
+    color: #6366f2;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 400;
+
+    transition: 0.3s;
+}
+
+
+.site-nav-links a:hover {
+    color: #7dffff;
+
+    text-decoration: underline;
+}
+
+
+/* ==================================================
+   WORK PAGE CONTAINER
+================================================== */
+
+.work-page {
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+
+/* ==================================================
+   WORK PAGE HEADING
+================================================== */
+
+.work-heading {
+    text-align: center;
+
+    margin-bottom: 60px;
+
+    animation: headingAppear 1s ease forwards;
+}
+
+
+/* SMALL TITLE */
+
+.small-title {
+    color: #6366f1;
+
+    font-size: 14px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+
+/* MAIN HEADING */
+
+.work-heading h1 {
+    font-size: 55px;
+
+    margin-bottom: 15px;
+}
+
+
+.work-heading h1 span {
+    color: #6366f1;
+}
+
+
+/* DESCRIPTION */
+
+.description {
+    max-width: 600px;
+
+    margin: auto;
+
+    color: #888;
+
+    line-height: 1.6;
+
+    font-size: 16px;
+}
+
+
+/* ==================================================
+   HEADING ANIMATION
+================================================== */
+
+@keyframes headingAppear {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(-25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ==================================================
+   PROJECTS GRID
+================================================== */
+
+.projects {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+}
+
+
+/* ==================================================
+   PROJECT CARD
+================================================== */
+
+.project-card {
+    position: relative;
+
+    background-color: #121212;
+
+    border: 1px solid #292929;
+
+    border-radius: 15px;
+
+    padding: 35px;
+
+    min-height: 330px;
+
+    overflow: hidden;
+
+    animation: cardAppear 0.8s ease both;
+
+    transition: all 0.4s ease;
+}
+
+
+/* PROJECT ANIMATION DELAYS */
+
+.project-card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+
+.project-card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+
+.project-card:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+
+.project-card:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+
+/* ==================================================
+   PROJECT CARD ANIMATION
+================================================== */
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ==================================================
+   PROJECT CARD HOVER
+================================================== */
+
+.project-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #6366f1;
+
+    box-shadow:
+        0 15px 40px rgba(99, 102, 241, 0.12);
+}
+
+
+/* ==================================================
+   PROJECT NUMBER
+================================================== */
+
+.project-number {
+    position: absolute;
+
+    top: 20px;
+    right: 25px;
+
+    font-size: 50px;
+
+    font-weight: bold;
+
+    color: #1c1c1c;
+
+    transition: all 0.4s ease;
+}
+
+
+.project-card:hover .project-number {
+    color: #252552;
+
+    transform: scale(1.1);
+}
+
+
+/* ==================================================
+   PROJECT CONTENT
+================================================== */
+
+.project-content {
+    position: relative;
+
+    z-index: 1;
+}
+
+
+.project-content h2 {
+    font-size: 25px;
+
+    margin-bottom: 15px;
+
+    color: #fff;
+}
+
+
+.project-content p {
+    color: #888;
+
+    line-height: 1.6;
+
+    margin-bottom: 20px;
+}
+
+
+/* ==================================================
+   TECHNOLOGIES
+================================================== */
+
+.technologies {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 25px;
+}
+
+
+.technologies span {
+    padding: 6px 12px;
+
+    border: 1px solid #333;
+
+    border-radius: 20px;
+
+    color: #999;
+
+    font-size: 12px;
+
+    transition: all 0.3s ease;
+}
+
+
+.project-card:hover .technologies span {
+    border-color: #6366f1;
+
+    color: #aaa;
+}
+
+
+/* ==================================================
+   PROJECT BUTTONS
+================================================== */
+
+.project-buttons {
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+
+/* MAIN PROJECT BUTTON */
+
+.project-button {
+    display: inline-block;
+
+    padding: 10px 18px;
+
+    background-color: #6366f1;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    transition: all 0.3s ease;
+}
+
+
+.project-button:hover {
+    background-color: #8b5cf6;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 7px 15px rgba(99, 102, 241, 0.25);
+}
+
+
+/* SECONDARY PROJECT BUTTON */
+
+.project-button.secondary {
+    background-color: transparent;
+
+    border: 1px solid #444;
+
+    color: #aaa;
+}
+
+
+.project-button.secondary:hover {
+    border-color: #6366f1;
+
+    color: white;
+
+    background-color: transparent;
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+.footer {
+    text-align: center;
+
+    margin-top: 60px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #222;
+
+    color: #555;
+
+    font-size: 13px;
+}
+
